@@ -1,40 +1,41 @@
 # 📘 Blockchain Summary Report
-Last updated: 4/20/2025, 10:35:48 PM
+Last updated: 4/20/2025, 11:39:38 PM
 
-- Total Blocks: 5
-- Total Transactions: 4
+- Total Blocks: 21
+- Total Transactions: 20
 
 ---
 ## 🔗 Recent Transactions
 
-### Block #0
-- Hash: `0x26b9f5c90dcc0bd4eb0ed1cd49b8965c6dd963190f22f351d371c8a9e45b0867`
-- Miner: `0x0000000000000000000000000000000000000000`
-- Transactions: 0
-
-### Block #1
-- Hash: `0xfb78c7e53ba1ab9f70b8d1db3229f958e3c470ad5b4bfcaa75c6c54074ab8b5f`
+### Block #16
+- Hash: `0x14948bba64c30471159019a6ee0819628fb879ea2d939f03cb86ef3a07824f22`
 - Miner: `0x0000000000000000000000000000000000000000`
 - Transactions: 1
-  - 📦 `Unknown` by `0x041fe955fb1ea77580fbe0e5028d7dcd107457b2` → `Contract Creation` [0 ETH]
+  - 📦 `Deploy LandRegistry` by `0x0cf7798f81e0732f031fa01b703c55f2c7f9d5ef` → `Contract Creation` [undefined ETH]
 
-### Block #2
-- Hash: `0x6f67feb86950ff20476dbef6e7a5a56e8602e263ea779516ac9dc75c1ba25e70`
+### Block #17
+- Hash: `0x134a8cd8d2f679b3e7d39a4a51c5da6867a46ff08345255ed204618f20f0ece8`
 - Miner: `0x0000000000000000000000000000000000000000`
 - Transactions: 1
-  - 📦 `Unknown` by `0x041fe955fb1ea77580fbe0e5028d7dcd107457b2` → `Contract Creation` [0 ETH]
+  - 📦 `setAuthority` by `0x0cf7798f81e0732f031fa01b703c55f2c7f9d5ef` → `0x8a905d29d336268fe89751861d3801e045eda32b` [undefined ETH]
 
-### Block #3
-- Hash: `0x5769d3daf0b3372b58584c043cf0e2d963e3cd880d23e729f61e678a4945eefb`
+### Block #18
+- Hash: `0x9a871428298cdde539d838e3993ef55a249a513bc287ac8d391b6af5f09be8be`
 - Miner: `0x0000000000000000000000000000000000000000`
 - Transactions: 1
-  - 📦 `Unknown` by `0x041fe955fb1ea77580fbe0e5028d7dcd107457b2` → `Contract Creation` [0 ETH]
+  - 📦 `registerLand` by `0x770439e4e9d25a872bd486d33d491875b96e5fa0` → `0x8a905d29d336268fe89751861d3801e045eda32b` [undefined ETH]
 
-### Block #4
-- Hash: `0x5040f065d951ce3138c218db76dcce27ba58e1e8e692213fb0fe782dae432287`
+### Block #19
+- Hash: `0xd2814e1055c4c2954b961b281cad83d73952f8e32eac2ff7f1c2be88f5b736c2`
 - Miner: `0x0000000000000000000000000000000000000000`
 - Transactions: 1
-  - 📦 `Unknown` by `0x041fe955fb1ea77580fbe0e5028d7dcd107457b2` → `0xc1395cde15151d40af847db94d0fd3f542e1571b` [0 ETH]
+  - 📦 `registerLand` by `0x770439e4e9d25a872bd486d33d491875b96e5fa0` → `0x8a905d29d336268fe89751861d3801e045eda32b` [undefined ETH]
+
+### Block #20
+- Hash: `0xb881bf57cf46d0cfe40c4ee6a058ab9bc702b4133f4c0b3aa0eb593368e45a26`
+- Miner: `0x0000000000000000000000000000000000000000`
+- Transactions: 1
+  - 📦 `buyLand` by `0x560de57d424c5ff43bf2366cefcad09e6a43017b` → `0x8a905d29d336268fe89751861d3801e045eda32b` [undefined ETH]
 
 ---
 ## 🔐 Authority-based Access
