@@ -1,21 +1,24 @@
 const LandRegistry = artifacts.require("LandRegistry");
 
 module.exports = async function (callback) {
-    const accounts = await web3.eth.getAccounts();
-    const landReg = await LandRegistry.deployed();
+    try {
+        const accounts = await web3.eth.getAccounts();
+        const landRegistry = await LandRegistry.deployed();
 
-    await landReg.assignSeller(accounts[1], { from: accounts[0] });
-    await landReg.assignBuyer(accounts[2], { from: accounts[0] });
+        // Seller registers land
+        await landRegistry.registerLand("Ahmedabad Sector 21", web3.utils.toWei("1", "ether"), { from: accounts[1] });
 
-    await landReg.listLand("Ahmedabad Sector 21", web3.utils.toWei("1", "ether"), { from: accounts[1] });
+        const land = await landRegistry.lands(1);
+        console.log("Before Buying:", land);
 
-    const before = await landReg.getLand(1);
-    console.log("Before Buying:", before);
+        // Buyer buys it
+        await landRegistry.buyLand(1, { from: accounts[2], value: web3.utils.toWei("1", "ether") });
 
-    await landReg.buyLand(1, { from: accounts[2], value: web3.utils.toWei("1", "ether") });
-
-    const after = await landReg.getLand(1);
-    console.log("After Buying:", after);
-
-    callback();
+        const updatedLand = await landRegistry.lands(1);
+        console.log("After Buying:", updatedLand);
+        callback();
+    } catch (err) {
+        console.error(err);
+        callback(err);
+    }
 };

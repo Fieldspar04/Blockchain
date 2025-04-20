@@ -1,32 +1,55 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.21;
+pragma solidity ^0.8.20;
 
 contract ProofOfAuthority {
-    mapping(address => bool) public validators;
+    address public authority;
 
-    event ValidatorAdded(address validator);
-    event ValidatorRemoved(address validator);
+    constructor() {
+        authority = msg.sender;
+    }
 
-    modifier onlyValidator() {
-        require(validators[msg.sender], "Not a validator");
+    modifier onlyAuthority() {
+        require(msg.sender == authority, "Not authorized");
         _;
     }
 
-    constructor() {
-        validators[msg.sender] = true;
+    function transferAuthority(address newAuthority) external onlyAuthority {
+        authority = newAuthority;
     }
 
-    function addValidator(address _validator) external onlyValidator {
-        validators[_validator] = true;
-        emit ValidatorAdded(_validator);
-    }
-
-    function removeValidator(address _validator) external onlyValidator {
-        validators[_validator] = false;
-        emit ValidatorRemoved(_validator);
-    }
-
-    function isValidator(address _addr) external view returns (bool) {
-        return validators[_addr];
+    function isAuthority(address addr) external view returns (bool) {
+        return addr == authority;
     }
 }
+
+// pragma solidity ^0.8.21;
+
+// contract ProofOfAuthority {
+//     mapping(address => bool) public validators;
+
+//     event ValidatorAdded(address validator);
+//     event ValidatorRemoved(address validator);
+
+//     modifier onlyValidator() {
+//         require(validators[msg.sender], "Not a validator");
+//         _;
+//     }
+
+//     constructor() {
+//         validators[msg.sender] = true;
+//     }
+
+//     function addValidator(address _validator) external onlyValidator {
+//         validators[_validator] = true;
+//         emit ValidatorAdded(_validator);
+//     }
+
+//     function removeValidator(address _validator) external onlyValidator {
+//         validators[_validator] = false;
+//         emit ValidatorRemoved(_validator);
+//     }
+
+//     function isValidator(address _addr) external view returns (bool) {
+//         return validators[_addr];
+//     }
+// }
