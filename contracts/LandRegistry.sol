@@ -33,7 +33,12 @@ contract LandRegistry {
     mapping(uint => Land) public lands;
 
     event LandRegistered(uint indexed id, address indexed owner);
-    event LandPurchased(uint indexed id, address indexed oldOwner, address indexed newOwner, uint price);
+    event LandPurchased(
+        uint indexed id,
+        address indexed oldOwner,
+        address indexed newOwner,
+        uint price
+    );
     event AuthorityChanged(address indexed newAuthority);
     event Withdrawal(address indexed to, uint amount);
 
@@ -82,7 +87,7 @@ contract LandRegistry {
         return availableLands;
     }
 
-    function buyLand(uint _id) public payable {
+    function buyLand(uint256 _id) public payable {
         require(_id > 0 && _id <= landCounter, "Invalid land ID");
 
         Land storage land = lands[_id];
@@ -101,16 +106,20 @@ contract LandRegistry {
 
     function getLandById(
         uint _id
-    ) public view returns (
-        uint,
-        address,
-        string memory,
-        string memory,
-        string memory,
-        string memory,
-        uint,
-        bool
-    ) {
+    )
+        public
+        view
+        returns (
+            uint,
+            address,
+            string memory,
+            string memory,
+            string memory,
+            string memory,
+            uint,
+            bool
+        )
+    {
         require(_id > 0 && _id <= landCounter, "Invalid land ID");
         Land memory land = lands[_id];
         return (
@@ -138,4 +147,4 @@ contract LandRegistry {
     receive() external payable {
         contractBalance += msg.value;
     }
-} 
+}
