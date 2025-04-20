@@ -1,82 +1,96 @@
 # 🏦 Blockchain Land Registry System
 
-A decentralized land registry system built on blockchain technology that enables secure and transparent property transactions.
+A decentralized blockchain-based solution for secure and transparent land registry management.
 
 ## 📋 Table of Contents
 - [Overview](#overview)
-- [Features](#features)
-- [System Architecture](#system-architecture)
-- [Technology Stack](#technology-stack)
-- [Getting Started](#getting-started)
-- [Smart Contract Details](#smart-contract-details)
-- [Security Features](#security-features)
-- [Usage](#usage)
+- [Key Features](#key-features)
+- [Architecture](#architecture)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Smart Contracts](#smart-contracts)
+- [Usage Guide](#usage-guide)
 - [Development](#development)
+- [Testing](#testing)
+- [Security](#security)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## 🔍 Overview
 
-This project implements a blockchain-based land registry system that allows:
-- Property registration and verification
-- Secure ownership transfer
+The Blockchain Land Registry System is a decentralized application (DApp) that leverages blockchain technology to create an immutable, transparent, and secure land registry system. It enables:
+
+- Digital property registration and verification
+- Secure ownership transfers
 - Transparent transaction history
-- Authority-based access control
+- Role-based access control
 - Automated compliance checks
 
-## ⭐ Features
+## ⭐ Key Features
 
-- **Property Management**
-  - Register new land properties
-  - Update property details
-  - View property history
-  - Transfer ownership
+### Property Management
+- Register land properties with comprehensive details
+- Track complete ownership history
+- Update property information
+- Transfer ownership securely
+- Verify property authenticity
 
-- **Access Control**
-  - Authority-based permissions
-  - Role-based access control
-  - Secure ownership verification
+### Access Control
+- Role-based permissions system
+- Multi-signature requirements for critical operations
+- Authority validation
+- Owner verification mechanisms
 
-- **Transaction Management**
-  - Automated property transfers
-  - Payment processing
-  - Transaction logging
-  - Historical data tracking
+### Transaction Layer
+- Automated property transfers
+- Built-in payment processing
+- Event logging and notifications
+- Historical data tracking
 
-## 🏗 System Architecture
+## 🏗 Architecture
 
-The system consists of:
-1. Smart Contracts (Solidity)
-2. Blockchain Network (Ethereum)
-3. Transaction Processing Layer
-4. Access Control Management
-5. Data Storage Layer
+### Core Components
+1. **Smart Contract Layer**
+   - Property Registry Contract
+   - Access Control Contract
+   - Transaction Management
 
-## 💻 Technology Stack
+2. **Blockchain Layer**
+   - Ethereum Network Integration
+   - Data Storage Management
+   - Consensus Mechanism
+
+3. **Interface Layer**
+   - Web3 Integration
+   - Event Handling
+   - Transaction Processing
+
+## 💻 Tech Stack
 
 - **Blockchain**: Ethereum
 - **Smart Contracts**: Solidity ^0.8.20
-- **Development Framework**: Truffle
-- **Testing**: JavaScript/Mocha
-- **Frontend**: Web3.js
-- **Node.js Tools**: fs, path
+- **Development Framework**: Truffle Suite
+- **Local Blockchain**: Ganache
+- **Testing**: Mocha & Chai
+- **Frontend Integration**: Web3.js
+- **Tools**: Node.js, npm
 
-## 🚀 Getting Started
+## 🚀 Installation
 
-### Prerequisites
+1. **Prerequisites**
 ```bash
 npm install -g truffle
 npm install -g ganache-cli
 ```
 
-### Installation
+2. **Clone & Install**
 ```bash
-git clone [repository-url]
-cd Blockchain-main
+git clone https://github.com/yourusername/blockchain-land-registry.git
+cd blockchain-land-registry
 npm install
 ```
 
-### Configuration
+3. **Configuration**
 ```bash
 # Start local blockchain
 ganache-cli
@@ -85,90 +99,139 @@ ganache-cli
 truffle migrate --reset
 ```
 
-## 📝 Smart Contract Details
+## 📝 Smart Contracts
 
 ### LandRegistry.sol
-- Main contract handling property registration and transfers
-- Implements PoA (Proof of Authority)
-- Manages property ownership and transactions
+The main contract handling property registration and management:
 
-### Key Functions
 ```solidity
-function registerProperty()
-function transferOwnership()
-function verifyProperty()
-function updatePropertyDetails()
+contract LandRegistry {
+    struct Property {
+        uint256 id;
+        address owner;
+        string location;
+        uint256 value;
+        bool isRegistered;
+    }
+
+    // Core functions
+    function registerProperty(string memory location, uint256 value) public;
+    function transferOwnership(uint256 propertyId, address newOwner) public;
+    function verifyProperty(uint256 propertyId) public view returns (bool);
+}
 ```
 
-## 🔒 Security Features
+## 📖 Usage Guide
 
-1. **Authority-based Access**
-   - Proof of Authority (PoA) implementation
-   - Restricted administrative functions
-   - Role-based permissions
-
-2. **Transaction Security**
-   - Ownership verification
-   - Payment validation
-   - State change protection
-
-3. **Data Integrity**
-   - Immutable transaction history
-   - Verified property records
-   - Automated compliance checks
-
-## 📖 Usage
-
-### Property Registration
+### Register New Property
 ```javascript
-const landRegistry = await LandRegistry.deployed()
-await landRegistry.registerProperty(propertyDetails)
+const landRegistry = await LandRegistry.deployed();
+
+const propertyDetails = {
+    location: "123 Blockchain Street",
+    value: web3.utils.toWei("10", "ether")
+};
+
+await landRegistry.registerProperty(
+    propertyDetails.location,
+    propertyDetails.value
+);
 ```
 
-### Property Transfer
+### Transfer Property
 ```javascript
-await landRegistry.transferOwnership(propertyId, newOwner)
+await landRegistry.transferOwnership(
+    propertyId,
+    newOwnerAddress,
+    { from: currentOwner }
+);
 ```
 
-### Property Verification
+### Verify Property
 ```javascript
-const isVerified = await landRegistry.verifyProperty(propertyId)
+const isVerified = await landRegistry.verifyProperty(propertyId);
+console.log("Property Verification:", isVerified);
 ```
 
 ## 🛠 Development
 
-### Running Tests
+### Local Development
 ```bash
+# Start development blockchain
+ganache-cli
+
+# Deploy contracts
+truffle migrate --reset
+
+# Run tests
 truffle test
 ```
 
-### Generating Documentation
+### Testing
 ```bash
-# Generate summary report
-node scripts/generateSummary.js
+# Run all tests
+truffle test
+
+# Run specific test
+truffle test ./test/LandRegistry.test.js
 ```
 
-### Deploy to Network
+### Documentation Generation
 ```bash
-truffle migrate --network [network-name]
+# Generate docs
+npm run generate-docs
 ```
+
+## 🔒 Security
+
+### Security Features
+1. **Access Control**
+   - Role-based permissions
+   - Authority validation
+   - Multi-signature support
+
+2. **Transaction Security**
+   - Ownership verification
+   - Payment validation
+   - State transition protection
+
+3. **Data Protection**
+   - Immutable records
+   - Cryptographic verification
+   - Audit trails
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open Pull Request
+2. Create your feature branch
+```bash
+git checkout -b feature/amazing-feature
+```
+3. Commit changes
+```bash
+git commit -m 'Add amazing feature'
+```
+4. Push to branch
+```bash
+git push origin feature/amazing-feature
+```
+5. Open a Pull Request
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 📞 Contact
+## 📞 Contact & Support
 
-Project Link: [https://github.com/Fieldspar04/Blockchain](https://github.com/Fieldspar04/Blockchain)
+- Project Link: [https://github.com/yourusername/blockchain-land-registry](https://github.com/yourusername/blockchain-land-registry)
+- Documentation: [/docs](docs/)
+- Issues: Please create issues in the repository for bug reports and feature requests
 
-For questions or support, please open an issue in the repository.
+## 🙏 Acknowledgments
+
+- Ethereum Development Community
+- OpenZeppelin Library
+- Truffle Suite
+- Web3.js Team
