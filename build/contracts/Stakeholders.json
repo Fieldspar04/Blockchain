@@ -23,7 +23,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -42,7 +43,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -61,7 +63,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -106,7 +109,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -125,7 +129,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"assignBuyer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"assignSeller\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"buyers\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"government\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"isBuyer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"isSeller\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"sellers\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Stakeholders.sol\":\"Stakeholders\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Stakeholders.sol\":{\"keccak256\":\"0x2e7d3e6c64a30830fa6cb4076766d26d2546098438d2ec036294f3b5e7103a56\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3d6ad7274ac7651171bbf722347bf7a4fbabc26ae50ace53b9ddfb016dfa807\",\"dweb:/ipfs/QmX87kxekRPLfcdphDZFvx63ra9rn7ZvixQ5ZyKsJVezKF\"]}},\"version\":1}",
@@ -2968,10 +2973,35 @@
       "links": {},
       "address": "0xFd2cDA4C8D3156E0f79d50505dc579F8EF14582b",
       "transactionHash": "0xf1129723ec675a05bfc9f4ddb8b0e747a575a58edb95fbcc4e45762758fcf960"
+    },
+    "1745212441476": {
+      "events": {},
+      "links": {},
+      "address": "0x99D0f3Db5b409f201FE30f0d8ff89296860616Ca",
+      "transactionHash": "0x5c2ed637c484161251497cb5704e94e9678cb3ba44b23855cb53d22cfda883f0"
+    },
+    "1745223622607": {
+      "events": {},
+      "links": {},
+      "address": "0x415A813eD09b8066D968f51533d4A7FcbF8925bF",
+      "transactionHash": "0xec497ba944275acde52274fe72ee5002a5c1750832060b57921a5f974629c8d0"
+    },
+    "1745225198947": {
+      "events": {},
+      "links": {},
+      "address": "0x0F05335dd400E70b9837715b88A413c656871179",
+      "transactionHash": "0x6b5dc9d0d74376768c6527a36b2fed8388b21b1ec9632ef53e0c77fca9d61710"
+    },
+    "1745225486664": {
+      "events": {},
+      "links": {},
+      "address": "0xd9A6340DcECC3C649b736F0F91ef5f328F3C6F33",
+      "transactionHash": "0x12906702c3433a903d34587d9d6752fe36546b2bbb0cfaba3cd36b65b9d85f73"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2025-04-20T18:01:34.359Z",
+  "updatedAt": "2025-04-21T09:20:05.762Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
