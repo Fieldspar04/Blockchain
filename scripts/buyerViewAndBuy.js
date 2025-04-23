@@ -32,8 +32,11 @@ module.exports = async function (callback) {
         const forSale = land[7];
 
         const buyerBalance = await web3.eth.getBalance(buyer);
-        if (!forSale) return console.log("❌ Land is not for sale."), callback();
-        if (BigInt(buyerBalance) < BigInt(price)) return console.log("❌ Not enough balance."), callback();
+        if (!forSale)
+            return console.log("❌ Land is not for sale."), callback();
+
+        if (BigInt(buyerBalance) < BigInt(price))
+            return console.log("❌ Not enough balance."), callback();
 
         await contract.buyLand(id, { from: buyer, value: price });
         console.log(`✅ Land ${id} purchased successfully!`);

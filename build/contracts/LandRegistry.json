@@ -21902,10 +21902,99 @@
       "links": {},
       "address": "0x0f5e1B244f8100C06588dbC435cB0ED8F0A872c2",
       "transactionHash": "0x0f2fdcb6d4be265f93819ed4f95f349509a03dbca79f5fd98ccc9e1b80aa1f8d"
+    },
+    "1745390236186": {
+      "events": {
+        "0x3430ad8dbed7c32bf49006f0d79d2ab70785ea13ebd4ef7d1b87e487ef08928c": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newAuthority",
+              "type": "address"
+            }
+          ],
+          "name": "AuthorityChanged",
+          "type": "event"
+        },
+        "0x807451718126bb3ea1827b4f2dcd9babf574bca415f9f210235f670d7c6e2030": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "oldOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
+            }
+          ],
+          "name": "LandPurchased",
+          "type": "event"
+        },
+        "0xcb4990052f95f6057496d19524f6c3163f50af9f33f2c15b092928e03414323e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            }
+          ],
+          "name": "LandRegistered",
+          "type": "event"
+        },
+        "0x7fcf532c15f0a6db0bd6d0e038bea71d30d808c7d98cb3bf7268a95bf5081b65": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "Withdrawal",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xa885aa97eb5A4c95d74d389F6bD33C49580d3a6c",
+      "transactionHash": "0xc1f59e4c896ce69acfd1cc786d9a1fe07204535d684dd1da9c3274be490cc598"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2025-04-21T09:20:05.856Z",
+  "updatedAt": "2025-04-23T06:38:10.091Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
